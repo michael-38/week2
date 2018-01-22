@@ -2,10 +2,16 @@ var https = require('https');
 
 
 
-function getAndPrintHTMLBuffer (hostParameter, pathParameter) {
+function getAndPrintHTMLParameter (url) {
 
 // var hostParameter = //regex for text up until "/", convert to string
 // var pathParameter = //regex for text after "/", convert to string
+
+var regexHost = (/^[^/]+/g);
+var regexPath = (/\/(.*)/g);
+var hostParameter = url.match(regexHost).toString();
+var pathParameter = url.match(regexPath).toString();
+
 
   var requestOptions = {
     host: hostParameter,
@@ -31,4 +37,4 @@ https.get(requestOptions, function (response) {
 
 }
 
-getAndPrintHTMLBuffer("sytantris.github.io", "/http-examples/step1.html");
+getAndPrintHTMLParameter("sytantris.github.io/http-examples/step1.html");
