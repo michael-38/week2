@@ -40,6 +40,6 @@ function printHTML(html) {
 
 getHTML("sytantris.github.io/http-examples/step1.html", printHTML);
 
-
+console.log("done"); //this will execute first as getHTML is taking some time to complete
 
 
